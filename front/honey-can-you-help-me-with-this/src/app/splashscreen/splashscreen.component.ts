@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-splashscreen',
+  selector: 'app-splash-screen',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './splashscreen.component.html',
-  styleUrl: './splashscreen.component.css'
+  styleUrls: ['./splashscreen.component.css']
 })
-export class SplashscreenComponent {
-
-}
+export class SplashScreenComponent {}

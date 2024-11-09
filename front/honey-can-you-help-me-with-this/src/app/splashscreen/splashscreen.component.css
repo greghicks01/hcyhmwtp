@@ -10,6 +10,18 @@
     align-items: center;
     overflow: hidden;
   }
+
+  /* Add your styles here */
+.splashscreen {
+  text-align: center;
+  padding: 50px;
+}
+
+.splashscreen button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
   
   .form-container {
     background: rgba(255, 255, 255, 0.8);

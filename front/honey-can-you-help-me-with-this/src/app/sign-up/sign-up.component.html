@@ -1,18 +1,22 @@
 <div class="background">
-    <div class="form-container">
-      <h2>Sign Up</h2>
-      <form>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-        <br>
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a routerLink="/sign-in">Sign In</a></p>
-    </div>
+    <h2>Sign Up</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" required><br><br>
+    
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" required><br><br>
+    
+      <label for="password">Password:</label>
+      <input id="password" type="password" formControlName="password" required><br><br>
+    
+      <label for="2fa">2FA Method:</label>
+      <select id="2fa" formControlName="twoFactorMethod" required>
+        <option value="google">Google Authenticator</option>
+        <option value="email">Email</option>
+        <option value="sms">SMS</option>
+      </select><br><br>
+    
+      <button type="submit">Sign Up</button>
+    </form>
   </div>

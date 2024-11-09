@@ -1,21 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SplashscreenComponent } from './splashscreen.component';
+import { TestBed } from '@angular/core/testing';
+import { SplashScreenComponent } from './splashscreen.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
 
-describe('SplashscreenComponent', () => {
-  let component: SplashscreenComponent;
-  let fixture: ComponentFixture<SplashscreenComponent>;
+describe('SplashScreenComponent', () => {
+  let component: SplashScreenComponent;
+  let fixture: any;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [SplashscreenComponent]
-    })
-    .compileComponents();
-  });
+      imports: [RouterTestingModule, SplashScreenComponent]
+    }).compileComponents();
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SplashscreenComponent);
+    fixture = TestBed.createComponent(SplashScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,13 +21,13 @@ describe('SplashscreenComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a sign-in button', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('button[routerLink="/sign-in"]')).toBeTruthy();
+  it('should have a sign-up button', () => {
+    const signUpButton = fixture.debugElement.query(By.css('button[routerLink="/sign-up"]'));
+    expect(signUpButton).toBeTruthy();
   });
 
-  it('should have a sign-up button', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('button[routerLink="/sign-up"]')).toBeTruthy();
+  it('should have a sign-in button', () => {
+    const signInButton = fixture.debugElement.query(By.css('button[routerLink="/sign-in"]'));
+    expect(signInButton).toBeTruthy();
   });
 });
