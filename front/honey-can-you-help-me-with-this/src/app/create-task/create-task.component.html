@@ -1,2 +1,27 @@
 <div class="background">
-<p>create-task works!</p></div>
+  <h2>Create Task</h2>
+  <form [formGroup]="createTaskForm" (ngSubmit)="onCreateTask()">
+    <label for="title">Title:</label>
+    <input id="title" formControlName="title" required><br><br>
+
+    <label for="description">Description:</label>
+    <input id="description" formControlName="description" required><br><br>
+
+    <button type="submit">Create Task</button>
+  </form>
+
+  <div *ngIf="selectedTask">
+    <h3>Add Steps to Task: {{ selectedTask.title }}</h3>
+    <form [formGroup]="addStepForm" (ngSubmit)="onAddStep()">
+      <label for="stepDescription">Step Description:</label>
+      <input id="stepDescription" formControlName="stepDescription" required><br><br>
+
+      <button type="submit">Add Step</button>
+    </form>
+
+    <h4>Steps:</h4>
+    <ul>
+      <li *ngFor="let step of selectedTask.steps">{{ step.description }}</li>
+    </ul>
+  </div>
+</div>
