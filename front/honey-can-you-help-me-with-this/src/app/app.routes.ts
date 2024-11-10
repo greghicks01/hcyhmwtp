@@ -6,6 +6,7 @@ import { CreateStepComponent } from './create-step/create-step.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { InviteOthersComponent } from './invite-others/invite-others.component';
 import { LeaveInstanceComponent } from './leave-instance/leave-instance.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 import { ReportAbuseComponent } from './report-abuse/report-abuse.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'create-task', component: CreateTaskComponent },
   { path: 'invite-others', component: InviteOthersComponent},
   { path: 'leave-instance', component: LeaveInstanceComponent },
+  { path: 'main-menu', component: MainMenuComponent },
   { path: 'report-abuse', component: ReportAbuseComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
