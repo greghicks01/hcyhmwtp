@@ -29,6 +29,7 @@ export class SignUpComponent {
     if (this.signUpForm.valid) {
       const formValues = this.signUpForm.value;
       this.authService.signUp(formValues).subscribe(response => {
+        console.log('Form submitted successfully!', formValues);
         console.log(response.message);
         this.isWaitingForConfirmation = true;
       });

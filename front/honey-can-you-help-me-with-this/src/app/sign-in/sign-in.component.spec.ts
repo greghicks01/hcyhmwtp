@@ -24,6 +24,7 @@ describe('SignInComponent', () => {
   it('should have a valid form when all fields are filled', () => {
     component.signInForm.controls['email'].setValue('john.doe@example.com');
     component.signInForm.controls['password'].setValue('password123');
+    component.signInForm.controls['twoFactorCode'].setValue('123456');
     expect(component.signInForm.valid).toBeTrue();
   });
 
@@ -37,10 +38,12 @@ describe('SignInComponent', () => {
     spyOn(console, 'log');
     component.signInForm.controls['email'].setValue('john.doe@example.com');
     component.signInForm.controls['password'].setValue('password123');
+    component.signInForm.controls['twoFactorCode'].setValue('123456');
     component.onSubmit();
-    expect(console.log).toHaveBeenCalledWith('Form submitted successfully!', {
+    expect(console.log).toHaveBeenCalledWith('Mock sign-in API called with:', {
       email: 'john.doe@example.com',
-      password: 'password123'
+      password: 'password123',
+      twoFactorCode:  '123456'
     });
   });
 

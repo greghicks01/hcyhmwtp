@@ -29,6 +29,7 @@ export class SignInComponent {
     if (this.signInForm.valid) {
       const formValues = this.signInForm.value;
       this.authService.signIn(formValues).subscribe(response => {
+        console.log('Form submitted successfully!', formValues);
         if (response.requires2FA) {
           this.isWaitingFor2FA = true;
         } else {
