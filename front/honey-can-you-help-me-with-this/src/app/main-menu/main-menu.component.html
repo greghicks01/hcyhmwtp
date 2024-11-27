@@ -1,13 +1,25 @@
-
 <div class="background">
-  <div class="main-menu">
+  <div class="menu-container">
     <h2>Main Menu</h2>
     <ul>
-      <li><a routerLink="/invite-others">Invite Others</a></li>
-      <li><a routerLink="/create-task">Create Task</a></li>
-      <li><a routerLink="/leave-instance">Leave Instance</a></li>
-      <li><a routerLink="/report-abuse">Report Abuse</a></li>
-      <li><a routerLink="/close-instance">Close Instance</a></li>
+      <li><a routerLink="/invite-others"><i class="fas fa-user-plus"></i>Invite Others</a></li>
+      <li><a routerLink="/create-task"><i class="fas fa-tasks"></i>Create Task</a></li>
+      <li><a routerLink="/leave-instance"><i class="fas fa-sign-out-alt"></i>Leave Instance</a></li>
+      <li><a routerLink="/report-abuse"><i class="fas fa-exclamation-triangle"></i>Report Abuse</a></li>
+      <li><a routerLink="/close-instance"><i class="fas fa-times-circle"></i>Close Instance</a></li>
     </ul>
+    <h3>Set Parameters</h3>
+    <form [formGroup]="parametersForm" (ngSubmit)="onSubmitParameters()">
+      <label for="username">Username:</label>
+      <input id="username" formControlName="username" required><br><br>
+
+      <label for="notifications">Notifications:</label>
+      <select id="notifications" formControlName="notifications" required>
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select><br><br>
+
+      <button type="submit">Save Parameters</button>
+    </form>
   </div>
 </div>
